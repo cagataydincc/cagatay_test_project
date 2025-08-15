@@ -1,0 +1,52 @@
+my_test_project/                   # Proje kökü
+│
+├─ tests/                          # Tüm test senaryoları
+│   ├─ conftest.py                 # Ortak fixture'lar (browser, page vs.)
+│   ├─ ui/                         # UI testleri
+│   │   ├─ test_login.py
+│   │   └─ test_checkout.py
+│   └─ api/                        # API testleri
+│       └─ test_user_api.py
+│
+├─ pages/                          # Page Object Model (POM) dosyaları
+│   ├─ login_page.py
+│   ├─ home_page.py
+│   └─ cart_page.py
+│
+├─ fixtures/                       # Opsiyonel: özel fixture'lar
+│   └─ db_fixture.py
+│
+├─ utils/                          # Yardımcı fonksiyonlar
+│   ├─ logger.py
+│   ├─ data_generator.py
+│   └─ file_helper.py
+│
+├─ data/                           # Test verileri
+│   ├─ test_data.json
+│   └─ users.csv
+│
+├─ config/                         # Konfigürasyon dosyaları
+│   ├─ config.yaml
+│   └─ environment.json
+│
+├─ reports/                        # Test çalıştırma raporları
+│   ├─ allure-results/
+│   └─ html-reports/
+│
+├─ drivers/                        # WebDriver veya bağımlı dosyalar
+│
+├─ requirements.txt                 # Python bağımlılıkları
+├─ pytest.ini                       # Pytest yapılandırması
+├─ playwright.config.js             # Playwright yapılandırması
+└─ README.md                        # Proje açıklaması
+
+🔹 Açıklamalar:
+tests/conftest.py → Ortak fixture’lar buraya koyulur, tüm testlerde otomatik erişilir.
+
+fixtures/ → Opsiyonel, özel setup’lar veya database fixture’ları için.
+
+config/ → Yalnızca YAML, JSON gibi konfigürasyon dosyaları burada tutulur, conftest.py’yi buraya koymana gerek yok.
+
+pages/ → Page Object Model yapısı burada bulunur, testler buradaki sınıfları kullanır.
+
+reports/ → Allure veya HTML raporlarının çıktıları burada tutulur.

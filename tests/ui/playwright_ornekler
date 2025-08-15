@@ -1,0 +1,91 @@
+from playwright.sync_api import sync_playwright
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=False)
+    page = browser.new_page()  #KLASİK HER CASE'DE BULUNACAK 4 MADDE
+
+    page.goto("https://www.btkakademi.gov.tr/portal") #URL GİTME
+    print("Başarıyla giriş sağlanmıştır")
+
+    print(page.title()) #başlık yazdırma
+    page.wait_for_timeout(4000)
+
+    page.locator("#gbt_index-banner-category-0-title").click()
+    page.wait_for_timeout(3000)
+
+    page.get_by_title('Büyük Veriye Giriş').click()
+    page.wait_for_timeout(1000)
+
+############################################################
+
+ #select_dropdown = page.query_selector('//select[@id="Skills"]').select_option(index=1) #bu madde ve alttaki madde kullanılabilir
+    #page.select_option('//select[@id="Skills"]', index=1)
+    #page.wait_for_timeout(1000)
+
+    #radio button
+    #radio_button= page.query_selector(('//input[@value="FeMale"]'))
+    #radio_button.check()
+    #page.wait_for_timeout(1000)
+
+    #if  radio_button.is_checked():
+    #  print('Radio button passed')  #buton işaretliyse bunu yazdır
+
+    #else:
+    #    print('Radio button not passed')  #buton işaretli değilse bunu yazdır
+        ########################################################################################################################
+    #Checkbox
+    #checkbox= page.query_selector(('//input[@value="Cricket"]')).check()
+    #page.wait_for_timeout(1000)
+
+        ########################################################################################################################
+        # ALERT KAPATMA
+        #page.wait_for_selector('//a[@href="#CancelTab"]').click()  # "Alert with OK & Cancel" sekmesine tıkla (sayfadaki ikinci tab)
+
+        #page.wait_for_timeout(1000)
+        #page.on("dialog",
+#            lambda dialog: dialog.dismiss())  # Sayfadaki tüm "dialog" olaylarını dinle ve açılırsa reddet (dismiss)
+        #page.wait_for_timeout(1000)
+        #page.wait_for_selector(
+#    '//div[@id="CancelTab"]/button').click()  # Confirm alert açan butona tıkla (bu, bir JavaScript confirm kutusu tetikler)
+        #page.wait_for_timeout(1000)
+
+#############################################################################################
+
+from playwright.sync_api import sync_playwright
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=False)
+    page = browser.new_page()
+    page.goto('https://demo.automationtesting.in/Alerts.html')
+    page.wait_for_timeout(1000)
+
+
+    #select_dropdown = page.query_selector('//select[@id="Skills"]').select_option(index=1) #bu madde ve alttaki madde kullanılabilir
+    #page.select_option('//select[@id="Skills"]', index=1)
+    #page.wait_for_timeout(1000)
+
+    ################################################################################################################
+    #radio button
+    #radio_button= page.query_selector(('//input[@value="FeMale"]'))
+    #radio_button.check()
+    #page.wait_for_timeout(1000)
+
+    #if  radio_button.is_checked():
+    #    print('Radio button passed')  #buton işaretliyse bunu yazdır
+
+    #else:
+    #   print('Radio button not passed')  #buton işaretli değilse bunu yazdır
+
+    ################################################################################################################
+    #Checkbox
+    #checkbox= page.query_selector(('//input[@value="Cricket"]')).check()
+    #page.wait_for_timeout(1000)
+
+    ################################################################################################################
+
+    #ALERT KAPATMA
+    page.wait_for_selector('//a[@href="#CancelTab"]').click() # "Alert with OK & Cancel" sekmesine tıkla (sayfadaki ikinci tab)
+
+    page.wait_for_timeout(1000)
+    page.on("dialog", lambda dialog: dialog.accept())  # Sayfadaki tüm "dialog" olaylarını dinle ve açılırsa reddet (dismiss)
+    page.wait_for_timeout(1000)
+    page.wait_for_selector('//div[@id="CancelTab"]/button').click() # Confirm alert açan butona tıkla (bu, bir JavaScript confirm kutusu tetikler)
+    page.wait_for_timeout(1000)

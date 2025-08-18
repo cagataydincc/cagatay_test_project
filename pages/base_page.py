@@ -1,12 +1,25 @@
-class BasePage:
-    def __init__(self, page):
+from playwright.sync_api import Page, expect
+
+class Login_Btk:
+    def __init__(self, page:Page):
         self.page = page
+        self.login_button = page.get_by_role("button", name="Giriş Yap Giriş Yap")
+        self.tckn_input = page.get_by_role("textbox", name="TC Kimlik Numarası")
+        self.next_button = page.get_by_role("button", name="İleri")
+        self.cancel_button = page.get_by_role("button", name="İptal")
 
-    def click(self, selector):
-        self.page.click(selector)
+    def goto(self):
+        self.page.goto("https://www.btkakademi.gov.tr/portal")
 
-    def type(self, selector, text):
-        self.page.fill(selector, text)
+    def click_login(self):
+        self.login_button.click()
 
-    def get_text(self, selector):
-        return self.page.inner_text(selector)
+    def fill_tckn(self, tckn: str):
+        self.tckn_input.click()
+        self.tckn_input.fill(tckn)
+
+    def click_next(self):
+        self.next_button.click()
+
+    def click_cancel(self):
+        self.cancel_button.click()

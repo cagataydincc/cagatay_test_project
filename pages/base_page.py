@@ -16,7 +16,7 @@ class Login_Btk:
 
     def fill_tckn(self, tckn: str):
         self.tckn_input.click()
-        self.tckn_input.fill(tckn)
+        self.tckn_input.fill('67204021866')
 
     def click_next(self):
         self.next_button.click()

@@ -32,17 +32,17 @@ class Login_Isnet:
 
     def fill_ad(self):
 
-        self.ad_input.fill('CAGATAYTEST')
+        self.ad_input.fill('TEST')
 
     def fill_soyad(self):
 
-        self.soyad_input.fill('DİNCTEST')
+        self.soyad_input.fill('TEST')
 
     def fill_sirketadi(self):
         self.sirketadi_input.fill("TESTFİRMA")
 
     def fill_phoneNumber(self):
-        self.phoneNumber_input.fill('5324645159')
+        self.phoneNumber_input.fill('51111111111')
 
     def fill_email(self):
         self.email_input.fill("test@gmail.com")

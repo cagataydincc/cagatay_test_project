@@ -1,6 +1,6 @@
 
 from playwright.sync_api import Page
-from pages.base_page2 import Login_Isnet   # Eğer ayrı bir dosyada/class'ta tuttuysak
+from pages.page_isnet_destekformu import Login_Isnet   # Eğer ayrı bir dosyada/class'ta tuttuysak
 
 def test_example(page: Page):
     login_page = Login_Isnet(page)

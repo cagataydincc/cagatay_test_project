@@ -37,7 +37,6 @@ my_test_project/                   # Proje kökü
 │
 ├─ requirements.txt                 # Python bağımlılıkları
 ├─ pytest.ini                       # Pytest yapılandırması
-├─ playwright.config.js             # Playwright yapılandırması
 └─ README.md                        # Proje açıklaması
 
 🔹 Açıklamalar:

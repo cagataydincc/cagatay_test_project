@@ -2,6 +2,7 @@
 from playwright.sync_api import Page
 from pages.page_isnet_destekformu import Login_Isnet   # Eğer ayrı bir dosyada/class'ta tuttuysak
 
+
 def test_example(page: Page):
     login_page = Login_Isnet(page)
     login_page.goto()

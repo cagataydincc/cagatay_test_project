@@ -1,3 +1,4 @@
+
 from playwright.sync_api import Page, expect
 
 class İletisimFormu_İsnet:
@@ -12,6 +13,7 @@ class İletisimFormu_İsnet:
         self.kvkk_check1 = page.get_by_role("checkbox", name="Kişisel Verilerin Korunması")
         self.kvkk_check2 = page.get_by_role("checkbox", name="Elektronik Ticari İleti Açık")
         self.button_submit = page.get_by_role("button", name="Gönder")
+
 
     def goto(self):
         self.page.goto("https://www.isnet.net.tr/iletisim")

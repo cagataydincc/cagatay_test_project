@@ -20,10 +20,6 @@ class Login_Isnet:
 
 
 
-
-
-
-
     def goto(self):
         self.page.goto("https://www.isnet.net.tr/")
 

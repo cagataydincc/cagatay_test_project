@@ -26,25 +26,25 @@ class Login_Isnet:
     def click_button(self):
         self.destek_button.click()
 
-    def fill_ad(self):
+    def fill_ad(self,ad:str):
 
-        self.ad_input.fill('TEST')
+        self.ad_input.fill(ad)
 
-    def fill_soyad(self):
+    def fill_soyad(self,soyad:str):
 
-        self.soyad_input.fill('TEST')
+        self.soyad_input.fill(soyad)
 
-    def fill_sirketadi(self):
-        self.sirketadi_input.fill("TESTFİRMA")
+    def fill_sirketadi(self,sirketadi:str):
+        self.sirketadi_input.fill(sirketadi)
 
-    def fill_phoneNumber(self):
-        self.phoneNumber_input.fill('51111111111')
+    def fill_phoneNumber(self,phoneNumber:str):
+        self.phoneNumber_input.fill(phoneNumber)
 
-    def fill_email(self):
-        self.email_input.fill("test@gmail.com")
+    def fill_email(self,email:str):
+        self.email_input.fill(email)
 
-    def fill_aciklama(self):
-        self.aciklama_input.fill("TEST AMAÇLIDIR DİKKATE ALMAYINIZ")
+    def fill_aciklama(self,aciklama:str):
+        self.aciklama_input.fill(aciklama)
 
     def checkbox_kvk(self):
         self.kvkk_checkbox.click()
@@ -57,3 +57,12 @@ class Login_Isnet:
 
     def button_gonderme(self):
         self.gonder_button.click()
+
+
+
+#Test verilerini LoginPage class'ında sabit olarak tanımlamak mantıklı değil çünkü:
+#Neden LoginPage'de tanımlamamalıyız:
+
+#Farklı kullanıcılar: Her testte farklı kullanıcı bilgileri kullanmak
+#Esneklik: Negatif test senaryoları için yanlış şifre, boş alan vs. test etmek
+#Page Object sorumluluğu: LoginPage sadece "nasıl login olunur" bilgisini tutar, "hangi verilerle" bilgisini değil
